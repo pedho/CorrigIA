@@ -1,0 +1,19 @@
+<h2> Temas </h2>
+<hr>
+{{#each temas}}
+    
+    <div class="card mt-4">
+        <div class="card-body">
+    
+            <h4 align="center">{{nome}}</h4>
+            <hr>
+            <div align="center">
+              <a href="/temas/{{slug}}"><button class="btn btn-success">Envie sua redação</button></a>
+            </div>
+            
+        </div>
+    </div>
+    
+{{else}}
+
+{{/each}}

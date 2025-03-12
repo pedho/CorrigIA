@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bem vindo ao CorrigIA Enem!</h1>
+  <p class="lead mt-3">Essa plataforma visa auxiliar seus estudos para redação do ENEM</p>
+  <hr class="my-4">
+  <p>Basta visualizar nossos temas disponíveis, escolher o desejado e nos enviar sua redação. A correção será realizada através do uso de IA e retornar uma pontuação, assim como recomendações de melhora de escrita. Use nossa plataforma!</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/usuarios/registro" role="button">Crie uma conta</a>
+  </p>
+</div>
+
+<h2 class="mt-4">Temas recentes</h2>
+
+{{#each temas}}
+
+    <div class="card mt-4">
+        <div class="card-body">
+    
+            <h4 align="center">{{nome}}</h4>
+            <hr>
+            <div align="center">
+              <a href="/temas/{{slug}}"><button class="btn btn-success">Envie sua redação</button></a>
+            </div>
+            
+        </div>
+    </div>
+
+
+{{else}}
+    <h3>Nenhum tema</h3>
+{{/each}}

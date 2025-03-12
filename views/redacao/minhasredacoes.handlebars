@@ -1,0 +1,30 @@
+<h2>Lista de Redações: </h2>
+<hr>
+<a href="/temas"><button class="btn btn-success">Fazer nova redação</button></a>
+
+{{#each redacoes}}
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>Tema: {{tema.nome}}</h4>
+            <p>{{nota}}</p>
+            <small>Data de envio: {{data}}</small>
+        </div>
+        <div class="card-body" style="display: flex; flex-direction: row; justify-content: flex-end">
+
+            <div>
+                <a href="/redacoes/minhasredacoes/{{_id}}"><button class="btn btn-success">Abrir</button></a>
+            </div>
+
+            <div>
+                <form action="redacoes/deletar" method="post">
+                <input type="hidden" name="id" value="{{_id}}">
+                <button type="submit" class="btn btn-danger">Deletar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{{else}}
+    <h3>Nenhuma redação enviada</h3>
+{{/each}}

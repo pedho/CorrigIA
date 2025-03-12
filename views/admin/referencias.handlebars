@@ -1,0 +1,26 @@
+<h2>Lista de referências: </h2>
+<hr>
+<a href="/admin/referencias/add"><button class="btn btn-success">Adicionar nova referencia</button></a>
+
+{{#each referencias}}
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>{{tema.nome}}</h4>
+            <p>{{conteudo}}</p>
+        </div>
+        <div class="card-body" style="display: flex; flex-direction: row; justify-content: flex-end">
+
+            <div>
+                <form action="referencias/deletar" method="post">
+                <input type="hidden" name="id" value="{{_id}}">
+                <button type="submit" class="btn btn-danger">Deletar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{{else}}
+    <h3 class="mt-4">Nenhuma referencia enviada</h3>
+{{/each}}

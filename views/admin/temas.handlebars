@@ -1,0 +1,29 @@
+<h2>Lista de Temas: </h2>
+<hr>
+<a href="/admin/temas/add"><button class="btn btn-success">Novo tema</button></a>
+
+{{#each temas}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>{{nome}}</h4>
+            <p>Slug: {{slug}}</p> <br> 
+            <small>{{date}}</small>
+
+        </div>
+        <div class="card-body" style="display: flex; flex-direction: row; justify-content: flex-end">
+            
+            <div>
+                <a href="/admin/temas/edit/{{_id}}"><button class="btn btn-success">Editar</button></a>
+            </div>
+            <div style="width: 20px"></div>
+            <div>
+                <form action="temas/deletar" method="post">
+                <input type="hidden" name="id" value="{{_id}}">
+                <button type="submit" class="btn btn-danger">Deletar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <h4 class="mt-4">Nenhum tema registrado</h4>
+{{/each}}

@@ -1,0 +1,24 @@
+<h1>Tema - {{tema.nome}}</h1>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <form action="/redacoes/nova/{{tema.slug}}" method="post">
+
+            <div class="card-body">
+                <h5 class="mt-3">Elabore um texto dissertativo-argumentativo, na modalidade escrita formal da língua portuguesa, sobre o tema <strong>{{tema.nome}}</strong>, apresentando proposta de intervenção que respeite os direitos humanos.</h5>
+            </div>
+
+            <div class="card-body">
+                <textarea name="conteudo" placeholder="Insira sua redação" class="form-control mt-10" rows="20"></textarea>
+            </div>
+
+            <input type="hidden" id="tema" name="tema" value="{{tema._id}}">
+            <input type="hidden" id="tema_nome" name="tema_nome" value="{{tema.nome}}">
+
+            <div align="center">
+                <button class="btn btn-success mt-4" type="submit">Envie sua redação</button>
+            </div>
+        </form>
+            
+    </div>
+</div>
